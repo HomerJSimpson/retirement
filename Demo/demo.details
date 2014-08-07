@@ -1,12 +1,12 @@
 ---
-	name: retirement
-	description: iOS webapp for peeking at the next drawing dates for powerball and megamillions. Uses yahoo pipes to grab data from the nj lottery site
-	authors:
-		- nick lehman
-	resources:
-		- http://code.jquery.com/jquery-1.11.0.min.js
-		- http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
-		- http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css
-		- http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js
-		- http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
+    name: retirement
+    description: iOS webapp for peeking at the next drawing dates for powerball and megamillions. Uses yahoo pipes to grab data from the nj lottery site
+    authors:
+        - nick lehman
+    resources:
+        - http://code.jquery.com/jquery-1.11.0.min.js
+        - http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
+        - http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css
+        - http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js
+        - http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
 ...
