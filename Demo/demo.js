@@ -57,5 +57,4 @@ $(function () {
 	$('head').append('<meta name="apple-mobile-web-app-status-bar-style" content="default">');
 	ko.applyBindings(app);
 	loadData();
-
 });
