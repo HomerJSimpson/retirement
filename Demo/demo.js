@@ -19,6 +19,7 @@ $(function () {
 				this.debug(true);
 				$('#message').text(JSON.stringify(data, null, '\t'));
 			}
+			$('.loading').removeClass('loading');
 		}
 	};
 
