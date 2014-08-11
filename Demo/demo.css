@@ -3,6 +3,7 @@ body {
 }
 
 .loading {
+	padding-left : 22px;
 	width: 16px;
 	height: 16px;
 	background-repeat: no-repeat;
