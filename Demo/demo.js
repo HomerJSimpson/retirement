@@ -55,8 +55,12 @@ $(function () {
 
 	$('head').append('<meta name="viewport" content="width=device-width, initial-scale=1" />');
 	$('head').append('<meta name="apple-mobile-web-app-capable" content="yes">');
-	$('head').append('<meta name="apple-mobile-web-app-status-bar-style" content="default">');
+	$('head').append('<meta name="apple-mobile-web-app-status-bar-style" content="black">');
 
 	ko.applyBindings(app);
 	loadData();
+    
+    if(!window.navigator.standalone) {
+        new QRCode(document.getElementById("qr"), window.location.toString());
+    }
 });

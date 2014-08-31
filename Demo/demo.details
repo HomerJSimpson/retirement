@@ -7,6 +7,7 @@ resources:
   - http://code.jquery.com/jquery-1.11.0.min.js
   - http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
   - http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css
+  - http://rawgit.com/davidshimjs/qrcodejs/master/qrcode.min.js
   - http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js
   - http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
 ...
