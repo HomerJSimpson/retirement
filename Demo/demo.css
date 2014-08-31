@@ -6,6 +6,9 @@ p {
     min-height : 40px;
 }
 
+p span:nth-child(2) {
+    font-size : smaller;
+}
 div#qr {
     padding : 16px;
 }
