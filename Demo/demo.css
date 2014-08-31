@@ -2,6 +2,10 @@ body {
     margin-top : 65px;
 }
 
+p {
+    min-height : 40px;
+}
+
 div#qr {
     padding : 16px;
 }
