@@ -60,7 +60,7 @@ $(function () {
 	ko.applyBindings(app);
 	loadData();
     
-    if(!window.navigator.standalone) {
-        new QRCode(document.getElementById("qr"), window.location.toString());
-    }
+	if(!window.navigator.standalone) {
+		new QRCode(document.getElementById("qr"), window.location.toString());
+	}
 });
