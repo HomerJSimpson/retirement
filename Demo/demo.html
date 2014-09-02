@@ -32,13 +32,14 @@
 			 <h2>Mega Millions</h2>
 
 			<p> <span class="loading" data-bind="text: nextDrawing"></span>, <span data-bind="text: drawingDate"></span>
-			<countdown-widget params="end: new Date()"></countdown-widget>
+			<countdown-widget params="end: drawingDate"></countdown-widget>
 			</p>
 		</div>
 		<div class="col-md-4">
 			 <h2>Power Ball</h2>
 
 			<p> <span class="loading" data-bind="text: pbNextDrawing"></span>, <span data-bind="text: pbDrawingDate"></span>
+			<countdown-widget params="end: pbDrawingDate"></countdown-widget>
 
 			</p>
 		</div>

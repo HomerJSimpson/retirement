@@ -1,3 +1,84 @@
+/*jshint multistr: true */
+(function () { // {{{
+
+    function CountdownViewModel(params) {
+        var self = this,
+            update;
+        this.now = ko.observable(params.now || new Date());
+        this.day = ko.observable(0);
+        this.hour = ko.observable(0);
+        this.min = ko.observable(0);
+        this.sec = ko.observable(0);
+        this.millis = ko.observable(0);
+        this.end = params.end;
+        this.showDates = ko.observable(0);
+
+        update = function () {
+            var i,
+            SEC = 1000,
+                now = new Date(),
+                end = new Date(self.end()),
+                MIN = SEC * 60,
+                HOUR = MIN * 60,
+                DAY = HOUR * 24,
+                day, hour, min, sec,
+                that = self;
+
+            i = +end - +now;
+            i = i > 0 ? i : 0;
+            day = Math.floor(i / DAY);
+            i -= day * DAY;
+            hour = Math.floor(i / HOUR);
+            i -= hour * HOUR;
+            min = Math.floor(i / MIN);
+            i -= min * MIN;
+            sec = Math.floor(i / SEC);
+            i -= sec * SEC;
+
+            self.now(now.toLocaleDateString() + ' ' + now.toLocaleTimeString());
+            self.day(day);
+            self.hour(hour);
+            self.min(min);
+            self.sec(sec);
+            self.millis(i);
+            self.end(end.toLocaleDateString() + ' ' + end.toLocaleTimeString());
+
+            if (+end > +now) {
+                setTimeout(function () {
+                    update.apply(that);
+                }, 500);
+            }
+        };
+
+        this.update = update;
+    }
+
+    ko.components.register('countdown-widget', {
+        viewModel: CountdownViewModel,
+        template: '<table cellspacing="0"> \
+    <tr data-bind="visible: showDates"> \
+	<td colspan="4" data-bind="text: now"></td> \
+    </tr> \
+    <tr> \
+	<th>day[s]</th> \
+	<th>hour[s]</th> \
+	<th>min[s]</th> \
+	<th>sec[s]</th> \
+    </tr> \
+    <tr> \
+<td data-bind="text: day"></td> \
+	<td data-bind="text: hour"></td> \
+	<td data-bind="text: min"></td> \
+	<td data-bind="text: sec"></td> \
+    </tr> \
+    <tr data-bind="visible: showDates"> \
+	<td colspan="4" data-bind="text: end"></td> \
+    </tr> \
+</table>'
+    });
+
+}()); // }}}
+
 $(function () {
 	var app = {
 		debug: ko.observable(false),
@@ -19,6 +100,8 @@ $(function () {
 				this.debug(true);
 				$('#message').text(JSON.stringify(data, null, '\t'));
 			}
+			ko.contextFor($('p:first table')[0]).$data.update();
+			ko.contextFor($('p:last table')[0]).$data.update();
 			$('.loading').removeClass('loading');
 		}
 	};
